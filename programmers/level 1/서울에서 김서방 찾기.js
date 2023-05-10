@@ -1,12 +1,5 @@
 function solution(seoul) {
-    var answer = '';
-    let idx = 0;
+    var idx = seoul.indexOf("Kim");
     
-    for(let i = 0; i <= seoul.length - 1; i++){
-        if(seoul[i] === "Kim"){
-            idx = i;
-        }
-    }
-    answer = "김서방은 " + idx + "에 있다";
-    return answer;
+    return "김서방은 " + idx + "에 있다";
 }
