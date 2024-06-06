@@ -1,8 +1,11 @@
-num = int(input())
-numbers = []
+n = int(input())
+list = []
 
-for i in range(num):
-  numbers.append(int(input()))
+for i in range(n):
+  data = int(input())
+  list.append(data)
+  
+list.sort()
 
-for i in sorted(numbers):
+for i in list:
   print(i)
