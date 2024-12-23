@@ -1,13 +1,12 @@
 function solution(numbers) {
-    let answer = [];
-    let sum = 0;
-    for(let i = 0; i < numbers.length; i++){
-        for(let j = 0; j < numbers.length; j++){
-            if(i !== j){
-                sum = numbers[i] + numbers[j];
-                if(!answer.includes(sum)){ answer.push(sum) };
-            }
+    const temp = []
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            temp.push(numbers[i] + numbers[j])
         }
     }
-    return answer.sort((a, b) => a - b);
+
+    const answer = [...new Set(temp)]
+
+    return answer.sort((a, b) => a - b)
 }
