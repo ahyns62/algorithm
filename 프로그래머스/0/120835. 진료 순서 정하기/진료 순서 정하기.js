@@ -1,4 +1,4 @@
 function solution(emergency) {
-    let ans = [...emergency].sort((a, b) => b - a);
-    return emergency.map((v) => ans.indexOf(v) + 1);
+    let k = emergency.slice().sort((a, b) => b - a);
+    return emergency.map(x => k.indexOf(x) + 1);
 }
