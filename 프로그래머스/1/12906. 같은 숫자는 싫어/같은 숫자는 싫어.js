@@ -1,3 +1,11 @@
 function solution(arr){
-    return arr.filter((val, idx) => val != arr[idx + 1]);
+    let ans = [];
+    
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] !== arr[i + 1]){
+            ans.push(arr[i]);
+        }
+    }
+    
+    return ans;
 }
