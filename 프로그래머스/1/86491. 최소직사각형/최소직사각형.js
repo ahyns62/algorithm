@@ -1,15 +1,14 @@
 function solution(sizes) {
-    // 가장 작은 지갑 = 가로 길이 중 max값 * 세로 길이 중 max값
-    const width = [];
-    const height = [];
+    let maxWidth = 0;
+    let maxHeight = 0;
     
-    for(let i = 0; i < sizes.length; i++){
-        const max = Math.max(sizes[i][0], sizes[i][1]);
-        const min = Math.min(sizes[i][0], sizes[i][1]);
-        width.push(max);
-        height.push(min);
+    sizes.forEach((size) => {
+        size.sort((a, b) => a - b);
         
-    }
+        const [width, height] = size;
+        if(maxWidth < width) maxWidth = width;
+        if(maxHeight < height) maxHeight = height;
+    });
     
-    return Math.max(...width) * Math.max(...height);
+    return maxWidth * maxHeight;
 }
