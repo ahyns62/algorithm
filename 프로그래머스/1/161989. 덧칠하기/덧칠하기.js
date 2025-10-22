@@ -1,13 +1,14 @@
 function solution(n, m, section) {
-    let answer = 0;
-    let part = 0;
+    let count = 0;
     
-    section.forEach((n) => {
-        if(n > part){
-            part = n + m - 1;
-            answer++;
+    while(section.length) {
+        let current = section.shift();
+        
+        while(section[0] < current + m){
+            section.shift();
         }
-    });
+        count++;
+    }
     
-    return answer;
+    return count;
 }
