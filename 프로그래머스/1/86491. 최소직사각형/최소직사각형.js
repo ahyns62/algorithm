@@ -1,14 +1,18 @@
 function solution(sizes) {
-    let maxWidth = 0;
-    let maxHeight = 0;
+    let width = 0;
+    let height = 0;
     
-    sizes.forEach((size) => {
-        size.sort((a, b) => a - b);
-        
-        const [width, height] = size;
-        if(maxWidth < width) maxWidth = width;
-        if(maxHeight < height) maxHeight = height;
-    });
+    for(let i = 0; i < sizes.length; i++){
+        if(sizes[i][0] < sizes[i][1]){
+            sizes[i].reverse();
+        }
+        if(sizes[i][0] > width){
+            width = sizes[i][0];
+        }
+        if(sizes[i][1] > height){
+            height = sizes[i][1];
+        }
+    }
     
-    return maxWidth * maxHeight;
+    return width * height;
 }
